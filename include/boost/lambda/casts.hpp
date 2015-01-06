@@ -86,6 +86,7 @@ class sizeof_action
 public:
   template<class RET, class Arg1>
   static RET apply(Arg1 &a1) {
+    detail::suppress_unused_variable_warnings(a1);
     return sizeof(a1);
   }
 };
