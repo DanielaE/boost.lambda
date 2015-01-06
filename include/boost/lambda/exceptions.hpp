@@ -176,6 +176,11 @@ struct throws_for_sure {
 
 // -- return_or_throw templates -----------------------------
 
+#if defined(_MSC_VER)
+#pragma warning(push)
+#pragma warning(disable:4702) // unreachable code
+#endif
+
 // false case, catch and try return types are incompatible
 // Now the catch part must throw for sure, otherwise a compile time error
 // occurs.
@@ -190,6 +195,10 @@ struct return_or_throw_phase2 {
              // a matching return type
   }
 };
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#endif
 
 // the try and catch return types are compatible
 template<>
