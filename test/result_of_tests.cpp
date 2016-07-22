@@ -10,6 +10,9 @@
 
 // -----------------------------------------------------------------------
 
+#ifdef _MSC_VER
+# pragma warning(disable: 4172) // returning address of local variable or temporary
+#endif
 
 #include <boost/test/minimal.hpp>    // see "Header Implementation Option"
 #include <boost/lambda/bind.hpp>
